@@ -7,8 +7,11 @@ public class simpleCubeScriot_touch : MonoBehaviour {
     public int[] ID;
 
     bool localcubeistouchong;
+
+  
 	// Use this for initialization
 	void Start () {
+
         ID = new int[2];
         localcubeistouchong = false;
 	}
@@ -31,7 +34,7 @@ public class simpleCubeScriot_touch : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider  otherOB) {
-        if (otherOB.gameObject.tag == "visible_active")
+        if (this.gameObject.tag == "visible_active" && otherOB.gameObject.tag == "visible_active")
         {
             Debug.Log("we done hit something");
             this.transform.parent.GetComponent<actualPiece>().switchoff();

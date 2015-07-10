@@ -11,12 +11,12 @@ public class actualPiece : MonoBehaviour {
     Vector3 mypos;
 
 
-    GameObject spawneryo;
+    GameObject thebrain;
 
     public bool moving;
 
     void Awake() { localCUBEmatrrix = new GameObject[4, 4];
-    spawneryo = GameObject.Find("spawner");
+    thebrain = GameObject.Find("BRAIN");
     }
 
 
@@ -99,7 +99,7 @@ public class actualPiece : MonoBehaviour {
 
     public void switchoff() {// Debug.Log("switcinh off");
 
-    
+      //  thebrain.GetComponent<generatorBrain>().startTimer();
        moving = false;
        cancontrol = false;
       // spawneryo.GetComponent<generatorBrain>().spawn();

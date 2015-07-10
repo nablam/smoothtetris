@@ -25,8 +25,12 @@ public class generatorBrain : MonoBehaviour {
     }
 
 
+   bool spawnmutex = false;
+
     public void spawn(){
         
+
+
         int x= Random.Range(0, 6);
 
         mypos = this.transform.position;
@@ -39,6 +43,33 @@ public class generatorBrain : MonoBehaviour {
     void docontrole(GameObject go) { 
     
     
+    }
+
+
+    /*
+   public  void startTimer() {
+        StartCoroutine(mytimer());
+    }
+    IEnumerator mytimer()
+    {
+       // print(Time.time);
+        yield return new WaitForSeconds(1);
+        print(Time.time);
+        spawn();
+    }
+    */
+
+    float timeleft = 5f;
+
+    void timerdown() {
+
+        timeleft -= Time.deltaTime;
+        if (timeleft < 0)
+        {
+            spawn();
+            spawnmutex = false;
+            timeleft = 5;
+        }
     }
 
 	// Update is called once per frame

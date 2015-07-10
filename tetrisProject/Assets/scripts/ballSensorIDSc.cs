@@ -24,7 +24,7 @@ public class ballSensorIDSc : MonoBehaviour {
     {
         if (otherOB.gameObject.tag == "visible_active")
         {
-
+            ison = true;
             this.gameObject.renderer.material.color = Color.red;
         }
 
@@ -40,7 +40,7 @@ public class ballSensorIDSc : MonoBehaviour {
     {
 
        // if (otherOB.gameObject.tag == "visible_active")
-        
+        ison = false;
 
             this.gameObject.renderer.material.color = Color.white;
         
